@@ -131,7 +131,6 @@
     <ClCompile Include="Organizer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DateTime.h" />
     <ClInclude Include="Note.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
