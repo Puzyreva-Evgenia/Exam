@@ -7,7 +7,7 @@
 
 void PrintList(std::vector<Note> notes) {
     if (notes.size() == 0) {
-    std::cout << "В органайзере нет записей" << std::endl;
+    std::cout << "Доступных записей нет" << std::endl;
     return;
     }
     for (int i = 0; i < notes.size(); i++) {
@@ -42,8 +42,11 @@ int main() {
     int number;
     while (true)
     {
-        std::cout << "\t\nДобавить запись в блокнот? Введите 1.\nНайти уже существующую запись?  Введите 2.\
-\nИзменить существующую запись?  Введите  3.\nУдалить запись?  Введите 4.\nЧтобы выйти из программы введите 0. \n";
+        std::cout << "\t\nХотите добавить в блокнот новую запись? \nВведите 1.\n\
+\nХотите найти уже существующую запись?\nВведите 2.\n\
+\nХотите изменить существующую запись?\nВведите 3.\n\
+\nХотите удалить запись?\nВведите 4.\n\
+\nХотите завершить работу с программой?\nВведите 0." << std::endl;
         std::cin >> sing;
         if (sing == '1') {
             std::cout << "Что вы хотите записать?" << std::endl;
@@ -101,14 +104,14 @@ int main() {
             if (notes.empty()) {
                 continue;
             }
-            std::cout << "Введите номер записи, которую хотите удалить ";
+            std::cout << "Введите номер записи, которую хотите удалить: ";
             std::cin >> number;
             if (number <= 0 || number > notes.size()) {
-                std::cout<<"Введите номер из списка" << std::endl;
+                std::cout<<"Некорректный номер записи. Попробуйте еще раз: " << std::endl;
                 continue;
             }
             notes.erase(notes.begin() + number - 1);
-            std::cout << "Запись успешно удалена" << std::endl;
+            std::cout << "Запись успешно удалена." << std::endl;
             PrintList(notes);
             Save(notes, "notes.txt");
             std::cout << "Данные успешно сохранены." << std::endl;
